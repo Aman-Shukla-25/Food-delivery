@@ -1,0 +1,111 @@
+/* My_Components/Footer_Section/Footer.css */
+
+.footer {
+    background-color: #eee1a3; /* Naya: Halka background color */
+    color: #2c3e50; /* Naya: Text color dark kiya */
+    padding: 60px 20px 20px;
+    font-family: Arial, sans-serif;
+    border-top: 5px solid #d2c08c; /* Naya: Border color bhi light kiya */
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    max-width: 250px;
+}
+
+.footer-column h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #d2c08c;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #555; /* Naya: Hover par thoda light dark */
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 14px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #555;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #d2c08c; /* Naya: Border color light kiya */
+    color: #2c3e50;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* --- Responsive Styles --- */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-column {
+        max-width: 100%;
+    }
+
+    .footer-column h4 {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}

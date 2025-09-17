@@ -1,0 +1,42 @@
+/* My_Components/promotional_Banners/Promotional_Banners.css */
+
+.promotional-banners-container {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 20px; /* Naya: Andar se bhi padding */
+    background-color: #ffffe3; /* Naya: Background color add kiya */
+    border-radius: 15px; /* Naya: Thoda rounded corner */
+}
+
+.banners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.banner-card {
+    display: block;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* Naya: Gehra shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.banner-card:hover {
+    transform: translateY(-8px); /* Naya: Thoda aur zyada upar uthega */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Naya: Hover par aur gehra shadow */
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .banners-grid {
+        grid-template-columns: 1fr;
+    }
+}

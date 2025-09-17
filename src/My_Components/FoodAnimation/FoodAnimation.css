@@ -1,0 +1,44 @@
+/* Container background */
+.food-container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffd6e0, #fff4f4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #d6336c;
+  z-index: 10;
+  max-width: 800px;
+  line-height: 1.2;
+}
+
+/* Food items common style */
+.food-item {
+  position: absolute;
+  width: 120px;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));
+}
+
+/* Floating animation */
+@keyframes float {
+  0%   { transform: translateY(0px) rotate(0deg); }
+  50%  { transform: translateY(-40px) rotate(8deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Different food positions + delays */
+.item1 { top: 20%; left: 10%; animation-delay: 0s; }
+.item2 { top: 65%; left: 18%; animation-delay: 1s; }
+.item3 { top: 25%; right: 15%; animation-delay: 2s; }
+.item4 { bottom: 18%; right: 25%; animation-delay: 3s; }
+.item5 { top: 10%; right: 35%; animation-delay: 1.5s; }
+.item6 { bottom: 20%; left: 30%; animation-delay: 2.5s; }
+.item7 { bottom: 8%; right: 10%; animation-delay: 0.5s; }

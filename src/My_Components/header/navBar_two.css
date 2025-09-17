@@ -1,0 +1,322 @@
+/* Poore navigation bar ka container */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 18px 40px;
+    z-index: 10;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Left Section Container --- */
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* --- Animated Logo Container --- */
+.delivery-partner-animation {
+    position: absolute;
+    z-index: 15;
+    animation: deliveryCycle 8s linear infinite;
+}
+
+.animated-logo {
+    width: 60px;
+    height: auto;
+    display: block;
+}
+
+/* Naya keyframe jismein logo 'Contact' se 'Helpline' tak chalega */
+@keyframes deliveryCycle {
+    0% {
+        left: 50%;
+        opacity: 1;
+    }
+    40% {
+        left: 80%;
+        opacity: 1;
+    }
+    41% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        left: 50%;
+        opacity: 1;
+    }
+}
+
+/* --- Right Section (Helpline) --- */
+.helpline-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 20;
+}
+
+/* --- Baaki ke Styles (jo change nahi hue hain) --- */
+
+/* Browse Categories Dropdown */
+.categories-dropdown-container {
+    position: relative;
+    z-index: 20;
+}
+
+.categories-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+.categories-btn:hover {
+    background-color: #34495e;
+}
+
+.categories-btn .icon,
+.categories-btn .arrow {
+    color: #fff;
+}
+
+.two-col-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 10px;
+    width: 400px;
+    border: 1px solid #e0e0e0;
+}
+
+.two-col-menu.official-look {
+    padding: 20px;
+    width: 450px;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 25px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 12px;
+    transition: background-color 0.2s, color 0.2s;
+    outline: none;
+    border-radius: 5px;
+}
+
+.category-item:hover {
+    background-color: #f5f5f5;
+    color: #2c3e50;
+}
+
+.category-item .item-icon {
+    font-size: 24px;
+    color: #7f8c8d;
+    width: 30px;
+    text-align: center;
+}
+
+.category-item:hover .item-icon {
+    color: #2c3e50;
+}
+
+/* Mega Menu Dropdown */
+.mega-menu {
+    position: fixed;
+    top: 160px;
+    left: 0;
+    width: 100vw;
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 20px;
+    padding-left: 50px;
+}
+
+.image-grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 20px;
+    flex: 1;
+    background-color: #EAECEE;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.image-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #ffffff;
+    overflow: hidden; /* <-- Naya: Image zoom ko box ke andar rakhega */
+}
+
+.image-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Badlav: Images pe kaam --- */
+.image-grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* <-- Naya: Images ke corners gol kiye */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* <-- Naya: Smooth transition add kiya */
+}
+
+.image-grid-item:hover img {
+    transform: scale(1.1); /* <-- Naya: Hover karne par image zoom hogi */
+}
+/* --------------------------------- */
+
+.image-grid-item .item-text {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Pages Dropdown */
+.pages-menu {
+    position: absolute;
+    top: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    padding: 15px;
+    width: 250px;
+    border: 1px solid #e0e0e0;
+}
+
+.pages-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pages-menu a {
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+    display: block;
+    padding: 10px 15px;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.pages-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a,
+.nav-links li button {
+    text-decoration: none;
+    color: #444;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.nav-links li a:hover,
+.nav-links li button:hover {
+    color: #2c3e50;
+}
+
+.has-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-arrow {
+    font-size: 10px;
+    position: relative;
+}
+
+/* Contact Button */
+.contact-btn {
+    background-color: #2c3e50;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+.contact-btn:hover {
+    background-color: #34495e;
+}
+
+/* Helpline Section */
+.phone-icon {
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+.helpline-number {
+    font-size: 17px;
+    font-weight: 600;
+    color: #333;
+}
+
+.support-text {
+    font-size: 13px;
+    color: #777;
+}
