@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // <-- React Router ka Link component import kiya
+import { Link } from 'react-router-dom';
 import './navBar_two.css';
 import logoImage from '../../assets/images/logo_first.png';
-// Apne pasand ka icon import karein
 import deliveryIcon from '../../assets/images/deliveryIcon.png'; 
 
 import paanCornerImage from '../../assets/images/paan_Corner.avif';
@@ -75,13 +74,13 @@ const NavBarTwo = () => {
 
     return (
         <nav className="main-nav">
-            {/* Left Section Container */}
             <div className="left-section">
-                {/* Browse All Categories Dropdown */}
                 <div className="categories-dropdown-container">
                     <button
                         className="categories-btn"
                         onClick={() => handleClick('categories')}
+                        aria-expanded={openDropdown === 'categories'}
+                        aria-controls="categories-menu"
                     >
                         <i className="fa-solid fa-th-large icon"></i>
                         <span>Browse All Categories</span>
@@ -89,11 +88,10 @@ const NavBarTwo = () => {
                     </button>
 
                     {openDropdown === 'categories' && (
-                        <div className="two-col-menu official-look">
+                        <div id="categories-menu" className="two-col-menu official-look">
                             <div className="two-col-grid">
                                 {twoColumnCategories.map((cat, index) => (
-                                    // <Link> se badlav
-                                    <Link key={index} to={`/categories/${cat.name.replace(/ /g, '-').toLowerCase()}`} className="category-item" onClick={(e) => e.preventDefault()} role="button">
+                                    <Link key={index} to={`/categories/${cat.name.replace(/ /g, '-').toLowerCase()}`} className="category-item">
                                         <span className="item-icon">{cat.icon}</span>
                                         {cat.name}
                                     </Link>
@@ -103,31 +101,25 @@ const NavBarTwo = () => {
                     )}
                 </div>
 
-                {/* Navigation Links */}
                 <ul className="nav-links">
-                    {/* 'Deals' link ko <Link> se badla */}
                     <li><Link to="/deals">Deals</Link></li>
                     
-                    {/* 'Home' link ko <Link> se badla */}
-                    <li><Link to="/">Home</Link></li>
-                    
                     <li>
-                        {/* Mega menu link ko <Link> se badla */}
                         <Link
                             to="/mega-menu"
                             className="has-dropdown"
                             onClick={(e) => { e.preventDefault(); handleClick('megaMenu'); }}
-                            role="button"
+                            aria-expanded={openDropdown === 'megaMenu'}
+                            aria-controls="mega-menu-content"
                         >
                             Mega menu
                             <i className={`fa-solid fa-chevron-${openDropdown === 'megaMenu' ? 'up' : 'down'} dropdown-arrow`}></i>
                         </Link>
                         {openDropdown === 'megaMenu' && (
-                            <div className="mega-menu image-grid-menu">
+                            <div id="mega-menu-content" className="mega-menu image-grid-menu">
                                 <div className="image-grid-container">
                                     {imageCategories.map((item, index) => (
-                                        // <Link> se badla
-                                        <Link key={index} to={`/categories/${item.name.replace(/ /g, '-').toLowerCase()}`} className="image-grid-item" onClick={(e) => e.preventDefault()} role="button">
+                                        <Link key={index} to={`/categories/${item.name.replace(/ /g, '-').toLowerCase()}`} className="image-grid-item">
                                             <img src={item.imgUrl} alt={item.name} />
                                             <div className="item-text">{item.name}</div>
                                         </Link>
@@ -136,37 +128,9 @@ const NavBarTwo = () => {
                             </div>
                         )}
                     </li>
-                    <li>
-                        {/* Pages link ko <Link> se badla */}
-                        <Link
-                            to="/pages"
-                            className="has-dropdown"
-                            onClick={(e) => { e.preventDefault(); handleClick('pages'); }}
-                            role="button"
-                        >
-                            Pages
-                            <i className={`fa-solid fa-chevron-${openDropdown === 'pages' ? 'up' : 'down'} dropdown-arrow`}></i>
-                        </Link>
-                        {openDropdown === 'pages' && (
-                            <div className="pages-menu">
-                                <ul>
-                                    {/* Pages ke links ko bhi <Link> se badla */}
-                                    <li><Link to="/about" role="button">About Us</Link></li>
-                                    <li><Link to="/my-account" role="button">My Account</Link></li>
-                                    <li><Link to="/purchase-guide" role="button">Purchase Guide</Link></li>
-                                    <li><Link to="/privacy-policy" role="button">Privacy Policy</Link></li>
-                                    <li><Link to="/terms" role="button">Terms of Service</Link></li>
-                                </ul>
-                            </div>
-                        )}
-                    </li>
-                    <li>
-                        <button className="contact-btn">Contact</button>
-                    </li>
                 </ul>
             </div>
 
-            {/* Helpline Section (yeh right mein rahega) */}
             <div className="helpline-section">
                 <i className="fa-solid fa-phone phone-icon"></i>
                 <div>
@@ -175,7 +139,6 @@ const NavBarTwo = () => {
                 </div>
             </div>
 
-            {/* Animated Delivery Partner (ab pura move karega) */}
             <div className="delivery-partner-animation">
                 <img src={deliveryIcon} alt="Delivery Rider Icon" className="animated-logo" />
             </div>
