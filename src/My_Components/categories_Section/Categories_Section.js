@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // ✅ ye add karo
 import './Categories_Section.css';
 
 // --- Category Images ko import karein ---
@@ -53,14 +54,18 @@ const CategoriesSection = () => {
             <h2 className="section-title">Explore by Category</h2>
             <div className="categories-grid">
                 {imageCategories.map((item, index) => (
-                    <div key={index} className="category-card">
+                    <Link
+                        key={index}
+                        to={`/categories/${item.name.replace(/ /g, "-").toLowerCase()}`} // ✅ same as NavBar_two
+                        className="category-card"
+                    >
                         <img 
                             src={item.imgUrl} 
                             alt={item.name} 
                             className="category-image" 
                         />
                         <div className="category-name">{item.name}</div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </section>

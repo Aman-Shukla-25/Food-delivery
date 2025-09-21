@@ -1,4 +1,4 @@
-/* My_Components/daily_Offers/Daily_Offers.css */
+/* src/My_Components/Daily_Offers/Daily_Offers.css */
 
 .daily-offers-container {
     max-width: 1300px;
@@ -83,8 +83,8 @@
 }
 
 .discounted-price {
-    font-size: 20px; /* Badlav: Thoda chota kiya */
-    font-weight: 700; /* Badlav: Thoda kam bold kiya */
+    font-size: 20px;
+    font-weight: 700;
     color: #2c3e50;
 }
 
@@ -110,6 +110,37 @@
 .add-to-cart-btn:hover {
     background-color: #28a745;
     transform: translateY(-2px);
+}
+
+/* Quantity Controls */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.quantity-btn {
+    padding: 6px 12px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: #28a745;
+}
+
+.quantity-display {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    width: 30px;
 }
 
 /* Responsive Styles */
