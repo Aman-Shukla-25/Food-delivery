@@ -14,7 +14,8 @@ import LoginPage from './My_Components/Pages/LoginPage';
 import CartPage from './My_Components/Pages/CartPage';
 import CheckoutPage from './My_Components/Pages/CheckoutPage';
 import OrderSuccessPage from './My_Components/Pages/OrderSuccessPage';
-import Deals from './My_Components/Pages/Deals'; // Deals component ko import karein
+import Deals from './My_Components/Pages/Deals'; 
+import CategoryPage from './My_Components/Pages/CategoryPage'; 
 
 // Doosre components
 import NavBarTwo from './My_Components/header/navBar_two';
@@ -25,58 +26,61 @@ import DailyOffers from './My_Components/daily_Offers/Daily_Offers';
 import FoodAnimation from "./My_Components/FoodAnimation/FoodAnimation";
 import Footer from './My_Components/footer_Section/Footer';
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase config
 const firebaseConfig = {
- apiKey: "AIzaSyA3-7xi5SOnnZktHSUEYzN6naVntuw2V9Y",
- authDomain: "meri-grocery-website.firebaseapp.com",
- projectId: "meri-grocery-website",
- storageBucket: "meri-grocery-website.firebasestorage.app",
- messagingSenderId: "628827732373",
- appId: "1:628827732373:web:6010e1c536a8b7cab21e9c",
- measurementId: "G-NELW6BQKXQ"
+  apiKey: "AIzaSyA3-7xi5SOnnZktHSUEYzN6naVntuw2V9Y",
+  authDomain: "meri-grocery-website.firebaseapp.com",
+  projectId: "meri-grocery-website",
+  storageBucket: "meri-grocery-website.firebasestorage.app",
+  messagingSenderId: "628827732373",
+  appId: "1:628827732373:web:6010e1c536a8b7cab21e9c",
+  measurementId: "G-NELW6BQKXQ"
 };
 
-// Firebase ko initialize karein
+// Firebase initialize
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app); // auth service ka reference lein
-export { auth }; // auth ko export karein taaki doosre components me use kar sakein
+const auth = getAuth(app); 
+export { auth };
 
 function App() {
-   return (
- <Router>
- <CartProvider>
- <Header />
- 
-<Routes>
-<Route 
- path="/" 
- element={
- <>
- <NavBarTwo />
-   <ImageSlider />
- <CategoriesSection />
- <PromotionalBanners />
- <DailyOffers />
-  <FoodAnimation />
- <Footer />
- </>
- } 
- />
- 
- <Route path="/deals" element={<Deals />} /> {/* Deals page ke liye naya route */}
- <Route path="/menu" element={<MenuPage />} />
- <Route path="/login" element={<LoginPage />} />
- <Route path="/cart" element={<CartPage />} />
- <Route path="/checkout" element={<CheckoutPage />} />
- <Route path="/order-success" element={<OrderSuccessPage />} />
- </Routes>
- </CartProvider>
-  </Router>
- );
+  return (
+    <Router>
+      <CartProvider>
+        <Header />
+        <Routes>
+          {/* ✅ Home page */}
+          <Route 
+            path="/" 
+            element={
+              <>
+                <NavBarTwo />
+                <ImageSlider />
+                <CategoriesSection />
+                <PromotionalBanners />
+                <DailyOffers />
+                <FoodAnimation />
+                <Footer />
+              </>
+            } 
+          />
+
+          {/* ✅ Deals page */}
+          <Route path="/deals" element={<Deals />} /> 
+
+          {/* ✅ Dynamic category pages */}
+          <Route path="/categories/:categoryId" element={<CategoryPage />} />
+
+          {/* ✅ Other pages */}
+          <Route path="/menu" element={<MenuPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/order-success" element={<OrderSuccessPage />} />
+        </Routes>
+      </CartProvider>
+    </Router>
+  );
 }
 
 export default App;
+
