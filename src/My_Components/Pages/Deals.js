@@ -2,23 +2,25 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Deals.css';
 
-import dealImage1 from '../../assets/images/fries.png';
-import dealImage2 from '../../assets/images/burger.png';
-import dealImage3 from '../../assets/images/coffe.png';
+
 import dealImage4 from '../../assets/images/corn_Flakes.avif';
-import dealImage5 from '../../assets/images/ice_Cream.avif';
-import dealImage6 from '../../assets/images/tea_Coffe.avif';
-import dealImage7 from '../../assets/images/offer_three.jpg';
-import dealImage8 from '../../assets/images/offer_one.jpg';
-import dealImage9 from '../../assets/images/iceecream.png';
-import dealImage10 from '../../assets/images/personal_Saman.avif';
+import amul_one_liter from "../../assets/images/amul_one_liter.jpg";
+import apples from "../../assets/images/apples.jpg";
+import chipsandbiscuit from "../../assets/images/chipsandbiscuit.jpg";
+import homeessencials from "../../assets/images/homeessencials.jpg";
+import thums_up from "../../assets/images/thums_up.jpg";
+import goldenglow from "../../assets/images/goldenglow.jpg";
+import baby_loation from "../../assets/images/baby_loation.jpg";
+import aatadal_Chawal from "../../assets/images/aatadal_Chawal.avif";
+import nescaffecoffe from "../../assets/images/nescaffecoffe.jpg";
+
 
 const deals = [
   {
     id: 1,
     title: '50% off on all Dairy Products',
     description: 'Get fresh milk, cheese, and yogurt at half price.',
-    image: dealImage1,
+    image: amul_one_liter,
     category: 'dairy',
     link: '/categories/milks-and-dairies'
   },
@@ -26,7 +28,7 @@ const deals = [
     id: 2,
     title: 'Buy 1 Get 1 on Fresh Fruits',
     description: 'Enjoy juicy apples, bananas, and oranges.',
-    image: dealImage2,
+    image: apples,
     category: 'fruits',
     link: '/categories/fresh-fruit'
   },
@@ -34,7 +36,7 @@ const deals = [
     id: 3,
     title: 'Flat 30% off on Snacks',
     description: 'Snack time just got better with our amazing deals on chips and biscuits.',
-    image: dealImage3,
+    image: chipsandbiscuit,
     category: 'snacks',
     link: '/categories/snacks-and-munchies'
   },
@@ -50,7 +52,7 @@ const deals = [
     id: 5,
     title: 'Mega Savings on Home Essentials',
     description: 'Stock up on cleaning supplies and other home goods.',
-    image: dealImage5,
+    image: homeessencials,
     category: 'home',
     link: '/categories/cleaning-essentials'
   },
@@ -58,7 +60,7 @@ const deals = [
     id: 6,
     title: 'Special Offer on Cold Drinks',
     description: 'Stay refreshed with great deals on cold drinks and juices.',
-    image: dealImage6,
+    image: thums_up,
     category: 'drinks',
     link: '/categories/cold-drinks-and-juices'
   },
@@ -66,7 +68,7 @@ const deals = [
     id: 7,
     title: '25% off on Personal Care',
     description: 'Pamper yourself with discounts on shampoos, soaps, and more.',
-    image: dealImage7,
+    image: goldenglow,
     category: 'personal-care',
     link: '/categories/personal-care'
   },
@@ -74,7 +76,7 @@ const deals = [
     id: 8,
     title: 'Exclusive Deals on Baby Care',
     description: 'Everything you need for your baby at unbeatable prices.',
-    image: dealImage8,
+    image: baby_loation,
     category: 'baby-care',
     link: '/categories/baby-care'
   },
@@ -82,7 +84,7 @@ const deals = [
     id: 9,
     title: 'Groceries Combo Pack',
     description: 'Save big with our special grocery combo packs.',
-    image: dealImage9,
+    image: aatadal_Chawal,
     category: 'groceries',
     link: '/categories/groceries'
   },
@@ -90,7 +92,7 @@ const deals = [
     id: 10,
     title: 'Best Price on Tea & Coffee',
     description: 'Sip on your favorite brew without breaking the bank.',
-    image: dealImage10,
+    image: nescaffecoffe,
     category: 'tea-coffee',
     link: '/categories/tea-coffee-and-health-drink'
   },

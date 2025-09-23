@@ -4,20 +4,22 @@ import React from 'react';
 import './Daily_Offers.css';
 import { useCart } from '../context/CartContext'; // ✅ Cart hook import
 
-import productOne from '../../assets/images/offer_one.jpg';
-import productTwo from '../../assets/images/offer_two.jpg';
-import productThree from '../../assets/images/offer_three.jpg';
-import productFour from '../../assets/images/offer_four.jpg';
-import productFive from '../../assets/images/offer_five.jpg';
-import productSix from '../../assets/images/offer_six.jpg';
+
+import apples from "../../assets/images/apples.jpg";
+import wholewheatbread from "../../assets/images/wholewheatbread.jpg";
+import milkchoclatebar from "../../assets/images/milkchoclatebar.jpg";
+import bournvita from "../../assets/images/bournvita.jpg";
+import rolex from "../../assets/images/rolex.jpg";
+import premiumtea from "../../assets/images/premiumtea.jpg";
+
 
 const dailyOffers = [
-    { id: 1, name: 'Organic Fresh Apples (1kg)', imageUrl: productOne, originalPrice: 150, discountedPrice: 120 },
-    { id: 2, name: 'Whole Wheat Bread (400g)', imageUrl: productTwo, originalPrice: 50, discountedPrice: 45 },
-    { id: 3, name: 'Milk Chocolate Bar (100g)', imageUrl: productThree, originalPrice: 80, discountedPrice: 65 },
-    { id: 4, name: 'Bournvita (250g)', imageUrl: productFour, originalPrice: 120, discountedPrice: 99 },
-    { id: 5, name: 'Rolex watch', imageUrl: productFive, originalPrice: 150, discountedPrice: 99 },
-    { id: 6, name: 'Premium Tea Leaves (250g)', imageUrl: productSix, originalPrice: 120, discountedPrice: 89 },
+    { id: 1, name: 'Organic Fresh Apples (1kg)', imageUrl: apples, originalPrice: 150, discountedPrice: 120 },
+    { id: 2, name: 'Whole Wheat Bread (400g)', imageUrl: wholewheatbread, originalPrice: 50, discountedPrice: 45 },
+    { id: 3, name: 'Milk Chocolate Bar (100g)', imageUrl: milkchoclatebar, originalPrice: 80, discountedPrice: 65 },
+    { id: 4, name: 'Bournvita (250g)', imageUrl: bournvita, originalPrice: 120, discountedPrice: 99 },
+    { id: 5, name: 'Rolex watch', imageUrl: rolex, originalPrice: 150, discountedPrice: 99 },
+    { id: 6, name: 'Premium Tea Leaves (250g)', imageUrl: premiumtea, originalPrice: 120, discountedPrice: 89 },
 ];
 
 const DailyOffers = () => {
@@ -82,3 +84,4 @@ const DailyOffers = () => {
 };
 
 export default DailyOffers;
+

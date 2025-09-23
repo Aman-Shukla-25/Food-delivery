@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // NavLink use kiya active link ke liye
 import "./navBar_two.css";
-import logoImage from "../../assets/images/logo_first.png";
 import deliveryIcon from "../../assets/images/deliveryIcon.png";
 
 import paanCornerImage from "../../assets/images/paan_Corner.avif";
@@ -24,19 +23,6 @@ import surfexcelTideImage from "../../assets/images/surfexcel_Tide.avif";
 import feviStickImage from "../../assets/images/fevi_Stick.avif";
 import shampooSoapImage from "../../assets/images/shampoo_Soap.avif";
 import petCareImage from "../../assets/images/pet_Care.avif";
-
-const twoColumnCategories = [
-  { name: "Milks and Dairies", icon: <i className="fa-solid fa-cheese"></i> },
-  { name: "Electronics", icon: <i className="fa-solid fa-mobile-alt"></i> },
-  { name: "Clothing & beauty", icon: <i className="fa-solid fa-shirt"></i> },
-  { name: "Baby Products", icon: <i className="fa-solid fa-bottle-droplet"></i> },
-  { name: "Pet Foods & Toy", icon: <i className="fa-solid fa-bone"></i> },
-  { name: "Fast food", icon: <i className="fa-solid fa-burger"></i> },
-  { name: "Groceries", icon: <i className="fa-solid fa-cart-shopping"></i> },
-  { name: "Vegetables", icon: <i className="fa-solid fa-carrot"></i> },
-  { name: "Fresh Fruit", icon: <i className="fa-solid fa-apple-whole"></i> },
-  { name: "Bread and Juice", icon: <i className="fa-solid fa-basket-shopping"></i> },
-];
 
 const imageCategories = [
   { name: "Paan Corner", imgUrl: paanCornerImage },
@@ -71,53 +57,26 @@ const NavBarTwo = () => {
   return (
     <nav className="main-nav">
       <div className="left-section">
-        <div className="categories-dropdown-container">
-          <button
-            className="categories-btn"
-            onClick={() => handleClick("categories")}
-            aria-expanded={openDropdown === "categories"}
-            aria-controls="categories-menu"
-          >
-            <i className="fa-solid fa-th-large icon"></i>
-            <span>Browse All Categories</span>
-            <i
-              className={`fa-solid fa-chevron-${
-                openDropdown === "categories" ? "up" : "down"
-              } arrow`}
-            ></i>
-          </button>
-
-          {openDropdown === "categories" && (
-            <div id="categories-menu" className="two-col-menu official-look">
-              <div className="two-col-grid">
-                {twoColumnCategories.map((cat, index) => (
-                  <Link
-                    key={index}
-                    to={`/categories/${cat.name.replace(/ /g, "-").toLowerCase()}`}
-                    className="category-item"
-                  >
-                    <span className="item-icon">{cat.icon}</span>
-                    {cat.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
         <ul className="nav-links">
           <li>
-            <Link to="/deals">Deals</Link>
+            <NavLink
+              to="/deals"
+              className={({ isActive }) =>
+                isActive ? "nav-item active-link" : "nav-item"
+              }
+            >
+              Deals
+            </NavLink>
           </li>
 
           <li>
             <button
-              className="has-dropdown"
+              className={`has-dropdown ${openDropdown === "megaMenu" ? "active-link" : ""}`}
               onClick={() => handleClick("megaMenu")}
               aria-expanded={openDropdown === "megaMenu"}
               aria-controls="mega-menu-content"
             >
-              Mega menu
+              Mega Menu
               <i
                 className={`fa-solid fa-chevron-${
                   openDropdown === "megaMenu" ? "up" : "down"
@@ -129,15 +88,17 @@ const NavBarTwo = () => {
               <div id="mega-menu-content" className="mega-menu image-grid-menu">
                 <div className="image-grid-container">
                   {imageCategories.map((item, index) => (
-                    <Link
+                    <NavLink
                       key={index}
                       to={`/categories/${item.name.replace(/ /g, "-").toLowerCase()}`}
-                      className="image-grid-item"
-                      onClick={() => setOpenDropdown(null)} // close menu on click
+                      className={({ isActive }) =>
+                        isActive ? "image-grid-item active-link" : "image-grid-item"
+                      }
+                      onClick={() => setOpenDropdown(null)}
                     >
                       <img src={item.imgUrl} alt={item.name} />
                       <div className="item-text">{item.name}</div>
-                    </Link>
+                    </NavLink>
                   ))}
                 </div>
               </div>

@@ -13,7 +13,7 @@ import cupcake from "../../assets/images/cupcake.png";
 export default function FoodAnimation() {
   return (
     <div className="food-container">
-      <h1 className="title">Your Bio Link, but Make it Stylish ✨</h1>
+      <h1 className="title">Stay Home & Get Your Daily Needs From Our Shop ✨</h1>
 
       {/* Floating food items */}
       <img src={burger} alt="burger" className="food-item item1" />

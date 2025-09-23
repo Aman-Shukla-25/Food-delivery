@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../footer_Section/Footer';
+
 import { useCart } from '../context/CartContext'; 
 import './pages.css';
 
@@ -13,7 +13,7 @@ const CartPage = () => {
   return (
     <div className="page-container">
       <div className="container my-5">
-        <h1 className="page-title">Aapka Cart</h1>
+        <h1 className="page-title">Your Cart</h1>
         
         {cartItems.length > 0 ? (
           <div className="row">
@@ -87,12 +87,12 @@ const CartPage = () => {
           </div>
         ) : (
           <div className="text-center my-5 empty-cart-message">
-            <p>Aapka cart khali hai.</p>
-            <a href="/menu" className="btn btn-primary mt-3">Abhi Shopping Karein</a>
+            <p> Cart is empty.</p>
+            <a href="/menu" className="btn btn-primary mt-3">SHOP NOW</a>
           </div>
         )}
       </div>
-      <Footer />
+      
     </div>
   );
 };
