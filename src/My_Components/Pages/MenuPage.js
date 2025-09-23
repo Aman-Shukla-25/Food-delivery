@@ -3,17 +3,28 @@ import Footer from '../footer_Section/Footer';
 import './pages.css';
 import { useCart } from '../context/CartContext'; 
 
+// IMAGE DATA 
+import apples from "../../assets/images/apples.jpg";
+import amul_one_liter from "../../assets/images/amul_one_liter.jpg";
+import basmati from "../../assets/images/basmati.jpg";
+import onion from "../../assets/images/onion.jpg";
+import oilfortune from "../../assets/images/oilfortune.jpg";
+import brown_bread from "../../assets/images/brown_bread.jpg";
+import tomatoes from "../../assets/images/tomatoes.jpg";
+import banana from "../../assets/images/banana.jpg";
+import yogurt from "../../assets/images/yogurt.jpg";
+
 // Dummy data for grocery items
 const groceryItems = [
-  { id: 1, name: 'Fresh Apples (1kg)', price: 150, image: 'https://via.placeholder.com/300x200?text=Apples', category: 'Fruits' },
-  { id: 2, name: 'Organic Milk (1L)', price: 60, image: 'https://via.placeholder.com/300x200?text=Milk', category: 'Dairy' },
-  { id: 3, name: 'Basmati Rice (5kg)', price: 500, image: 'https://via.placeholder.com/300x200?text=Rice', category: 'Grains' },
-  { id: 4, name: 'Onions (1kg)', price: 40, image: 'https://via.placeholder.com/300x200?text=Onions', category: 'Vegetables' },
-  { id: 5, name: 'Cooking Oil (1L)', price: 120, image: 'https://via.placeholder.com/300x200?text=Oil', category: 'Staples' },
-  { id: 6, name: 'Bread Loaf', price: 30, image: 'https://via.placeholder.com/300x200?text=Bread', category: 'Bakery' },
-  { id: 7, name: 'Tomatoes (1kg)', price: 50, image: 'https://via.placeholder.com/300x200?text=Tomatoes', category: 'Vegetables' },
-  { id: 8, name: 'Bananas (1 Dozen)', price: 80, image: 'https://via.placeholder.com/300x200?text=Bananas', category: 'Fruits' },
-  { id: 9, name: 'Yogurt (500g)', price: 75, image: 'https://via.placeholder.com/300x200?text=Yogurt', category: 'Dairy' },
+  { id: 1, name: 'Fresh Apples (1kg)', price: 150, image: apples, category: 'Fruits' },
+  { id: 2, name: 'Organic Milk (1L)', price: 60, image: amul_one_liter, category: 'Dairy' },
+  { id: 3, name: 'Basmati Rice (5kg)', price: 500, image: basmati, category: 'Grains' },
+  { id: 4, name: 'Onions (1kg)', price: 40, image: onion, category: 'Vegetables' },
+  { id: 5, name: 'Cooking Oil (1L)', price: 120, image: oilfortune, category: 'Staples' },
+  { id: 6, name: 'Bread Loaf', price: 30, image: brown_bread, category: 'Bakery' },
+  { id: 7, name: 'Tomatoes (1kg)', price: 50, image: tomatoes, category: 'Vegetables' },
+  { id: 8, name: 'Bananas (1 Dozen)', price: 80, image: banana, category: 'Fruits' },
+  { id: 9, name: 'Yogurt (500g)', price: 75, image: yogurt, category: 'Dairy' },
 ];
 
 const allCategories = ['All', ...new Set(groceryItems.map(item => item.category))];

@@ -6,7 +6,6 @@ import {
   signInWithEmailAndPassword, 
   onAuthStateChanged 
 } from "firebase/auth";
-import Footer from '../footer_Section/Footer';
 import './pages.css';
 
 const LoginPage = () => {
@@ -131,10 +130,11 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
+      
     </div>
   );
 };
 
 export default LoginPage;
+
 

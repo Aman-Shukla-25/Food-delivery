@@ -320,3 +320,41 @@
     font-size: 13px;
     color: #777;
 }
+
+/* Hover Effect for Links and Mega Menu Items */
+.nav-links a,
+.nav-links li button,
+.image-grid-item {
+  transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links li button:hover,
+.image-grid-item:hover {
+  color: #27ae60; /* Green Text */
+  background: rgba(39, 174, 96, 0.1); /* Light Green Background */
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+/* Active Link Style */
+.active-link {
+  color: #27ae60 !important;
+  font-weight: 600;
+  background: rgba(39, 174, 96, 0.15);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+/* Mega Menu Hover Animation for Image */
+.image-grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-grid-item:hover img {
+  transform: scale(1.1);
+}
